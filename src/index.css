@@ -1,0 +1,29 @@
+:root {
+  --primary-color: #ac8cff;
+  --secondary-color: #c9b5fb;
+  --font-color: #697887;
+  --background-color-light: #d3dde5;
+  --background-color: #ede7ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+@media (max-width: 600px) {
+  #root {
+    width: 100%;
+    padding: 20px;
+  }
+}
