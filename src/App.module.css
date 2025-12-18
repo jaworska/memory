@@ -8,7 +8,6 @@
   max-width: 600px;
   width: 100%;
 }
-
 .cardGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -27,5 +26,11 @@
   transition: background-color 0.3s ease;
   &:hover {
     background-color: #9b73e6;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .cardGrid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
