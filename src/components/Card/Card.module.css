@@ -1,6 +1,10 @@
 .card img {
   width: 100%;
   height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  draggable: false;
 }
 .card {
   cursor: pointer;
@@ -8,6 +12,8 @@
   border-radius: 8px;
   position: relative;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  user-select: none;
+  -webkit-user-drag: none;
   &::after {
     background: var(--secondary-color);
     content: "";
