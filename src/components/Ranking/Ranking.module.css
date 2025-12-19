@@ -1,0 +1,157 @@
+.ranking {
+  width: 100%;
+  max-width: 600px;
+  margin: 16px auto;
+}
+
+.rankingPanel {
+  margin-top: 20px;
+  background: #ede7ff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin: 0 0 20px 0;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  margin-bottom: 10px;
+  background: #fff;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.3s ease-out forwards;
+  opacity: 0;
+}
+
+.listItem:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.listItem:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.listItem:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.listItem:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.listItem:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.listItem:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.listItem:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.listItem:nth-child(8) {
+  animation-delay: 0.8s;
+}
+.listItem:nth-child(9) {
+  animation-delay: 0.9s;
+}
+.listItem:nth-child(10) {
+  animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.rank {
+  font-size: 20px;
+  min-width: 50px;
+  text-align: center;
+}
+
+.name {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 15px;
+}
+
+.stats {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.time,
+.clicks {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #ede7ff;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.empty {
+  text-align: center;
+  color: #999;
+  font-size: 1.1rem;
+  padding: 30px;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .rankingPanel {
+    padding: 15px;
+  }
+
+  .listItem {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .name {
+    margin: 10px 0;
+  }
+
+  .stats {
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+}
