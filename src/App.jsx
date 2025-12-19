@@ -69,6 +69,7 @@ function App() {
   const [level, setLevel] = useState("easy");
   const [cardsState, setCardsState] = useState(shuffleCards(level));
   const [time, setTime] = useState(0);
+  const [timerStarted, setTimerStarted] = useState(false);
   const [playerName, setPlayerName] = useState("");
   const [rankings, setRankings] = useState([]);
   const [showWinModal, setShowWinModal] = useState(false);
@@ -78,14 +79,14 @@ function App() {
     cardsState.length > 0 && cardsState.every((card) => card.matched);
 
   useEffect(() => {
-    if (gameWon) return; // Stop timer when game is won
+    if (gameWon || !timerStarted) return; // Stop timer when game is won or not started
 
     const timerInterval = setInterval(() => {
       setTime((prevTime) => prevTime + 1);
     }, 1000);
 
     return () => clearInterval(timerInterval);
-  }, [gameWon]);
+  }, [gameWon, timerStarted]);
 
   useEffect(() => {
     if (gameWon && !showWinModal) {
@@ -140,6 +141,7 @@ function App() {
     clicks = 0;
     allClicks = 0;
     setTime(0);
+    setTimerStarted(false);
     setShowWinModal(false);
     setCardsState(shuffleCards(level));
   };
@@ -158,6 +160,11 @@ function App() {
   };
 
   const clickCard = (e) => {
+    // Start timer on first click
+    if (!timerStarted) {
+      setTimerStarted(true);
+    }
+
     clicks += 1;
     allClicks += 1;
     if (clicks > 2) {
