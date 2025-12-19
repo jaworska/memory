@@ -13,24 +13,16 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   margin-bottom: 24px;
-}
-.resetButton {
-  background-color: var(--primary-color);
-  color: #fff;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  &:hover {
-    background-color: #9b73e6;
+  &.hard {
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 
 @media screen and (max-width: 500px) {
   .cardGrid {
     grid-template-columns: repeat(3, 1fr);
+    &.hard {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 }

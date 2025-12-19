@@ -7,6 +7,7 @@
   transition: transform 0.2s;
   border-radius: 8px;
   position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   &::after {
     background: var(--secondary-color);
     content: "";
@@ -47,4 +48,19 @@
       opacity: 0;
     }
   }
+}
+
+@keyframes matchFound {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.card.matched {
+  animation: matchFound 0.5s ease;
 }
