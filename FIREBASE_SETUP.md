@@ -58,7 +58,7 @@ For production, update your database rules:
       ".write": true,
       ".indexOn": ["time"],
       "$scoreId": {
-        ".validate": "newData.hasChildren(['name', 'time', 'clicks', 'date']) && newData.child('name').isString() && newData.child('time').isNumber() && newData.child('clicks').isNumber() && newData.child('date').isString()"
+        ".validate": "newData.hasChildren(['name', 'time', 'clicks', 'date', 'level']) && newData.child('name').isString() && newData.child('time').isNumber() && newData.child('clicks').isNumber() && newData.child('date').isString() && newData.child('level').isString()"
       }
     }
   }

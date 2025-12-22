@@ -1,11 +1,13 @@
 import { useState } from "react";
 import styles from "./WinModal.module.css";
 import Ranking from "../Ranking/Ranking";
+import Button from "../Button/Button";
 
 function WinModal({
   time,
   clicks,
   playerName,
+  level,
   onNameChange,
   onSave,
   onClose,
@@ -43,6 +45,10 @@ function WinModal({
             <span className={styles.label}>Clicks:</span>
             <span className={styles.value}>{clicks}</span>
           </div>
+          <div className={styles.stat}>
+            <span className={styles.label}>Level:</span>
+            <span className={styles.value}>{level}</span>
+          </div>
         </div>
 
         <div className={styles.nameSection}>
@@ -61,20 +67,16 @@ function WinModal({
         </div>
 
         <div className={styles.buttons}>
-          <button
-            className={styles.saveButton}
-            onClick={handleSave}
-            disabled={isSaving || scoreSaved}
-          >
+          <Button onClick={handleSave} disabled={isSaving || scoreSaved}>
             {isSaving
               ? "Saving..."
               : scoreSaved
               ? "Score saved! ✓"
               : "Save score"}
-          </button>
-          <button className={styles.closeButton} onClick={onClose}>
+          </Button>
+          <Button className={styles.closeButton} onClick={onClose}>
             {scoreSaved ? "Close & Play again" : "Close"}
-          </button>
+          </Button>
         </div>
         <Ranking rankings={rankings} />
       </div>

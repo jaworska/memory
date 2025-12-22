@@ -1,0 +1,20 @@
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.cardGrid.hard {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+@media screen and (max-width: 500px) {
+  .cardGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .cardGrid.hard {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

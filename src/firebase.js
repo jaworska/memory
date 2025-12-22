@@ -18,14 +18,15 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
 // Save score to Firebase
-export const saveScore = async (playerName, time, clicks) => {
+export const saveScore = async (playerName, time, clicks, level) => {
     try {
         const scoresRef = ref(database, 'scores');
         await push(scoresRef, {
             name: playerName,
             time: time,
             clicks: clicks,
-            date: new Date().toISOString()
+            date: new Date().toISOString(),
+            level: level
         });
         return true;
     } catch (error) {
@@ -34,11 +35,11 @@ export const saveScore = async (playerName, time, clicks) => {
     }
 };
 
-// Get top 10 rankings
+// Get rankings from Firebase
 export const getRankings = async () => {
     try {
         const scoresRef = ref(database, 'scores');
-        const topScoresQuery = query(scoresRef, orderByChild('time'), limitToFirst(10));
+        const topScoresQuery = query(scoresRef, orderByChild('time'), limitToFirst(100));
         const snapshot = await get(topScoresQuery);
 
         if (snapshot.exists()) {

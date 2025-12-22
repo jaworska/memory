@@ -4,6 +4,10 @@
   margin: 16px auto;
 }
 
+.rankingButton {
+  background: var(--secondary-color);
+}
+
 .rankingPanel {
   margin-top: 20px;
   background: #ede7ff;
@@ -27,8 +31,8 @@
 .title {
   text-align: center;
   color: var(--primary-color);
-  font-size: 1.8rem;
-  margin: 0 0 20px 0;
+  font-size: 28px;
+  margin-bottom: 16px;
 }
 
 .list {
@@ -114,7 +118,9 @@
 }
 
 .time,
-.clicks {
+.clicks,
+.level,
+.levelButton {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -124,10 +130,74 @@
   font-weight: 500;
 }
 
+.levelSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.levelLabel {
+  font-size: 14px;
+  color: #666;
+}
+
+.levelButtons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.levelButton,
+.sortButton {
+  background: var(--secondary-color);
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.levelButton:hover,
+.sortButton:hover {
+  background: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.sortSelector {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-direction: column;
+}
+
+.sortLabel {
+  font-size: 14px;
+  color: #666;
+}
+
+.sortButtons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
 .empty {
   text-align: center;
   color: #999;
-  font-size: 1.1rem;
+  font-size: 18px;
   padding: 30px;
   font-style: italic;
 }
