@@ -30,9 +30,12 @@ function App() {
   // Show win modal after game is won
   useEffect(() => {
     if (gameWon && !showWinModal) {
-      setTimeout(() => {
+      const timeout = setTimeout(() => {
         setShowWinModal(true);
       }, 1000);
+      return () => {
+        clearTimeout(timeout);
+      };
     }
   }, [gameWon, showWinModal]);
 
